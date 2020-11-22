@@ -16,7 +16,13 @@ module.exports = {
         use: [
           path.resolve("./my-webpack-loader.js")
         ]
-      }
+      },
+      {
+        test: /\.css$/, // 모든 js를 선택 
+        use: [
+          'css-loader'
+        ]
+      },
     ]
   }
 }
