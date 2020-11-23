@@ -12,19 +12,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/, // 모든 js를 선택 
+        test: /\.css$/, // 모든 css를 선택 
         use: [
-          'style-loader',
-          'css-loader'
+          'style-loader', 'css-loader'
         ]
       },
       {
         test: /\.(png|jpg|gif|svg)$/, 
         loader: 'url-loader',
         options: {
-          publicPath: './dist',
           name: '[name].[ext]?[hash]',
-          limit: 20000, // 2kb
+          publicPath: './dist',
+          limit: 20000, // 2kb 이상은 file-loader로 파일을 불러오게됨 . 
         },
       }
     ]
